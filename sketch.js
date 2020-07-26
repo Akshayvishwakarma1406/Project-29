@@ -3,6 +3,12 @@ const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
+const Constraint = Matter.Constraint;
+var box,b1ox;
+
+function preload(){
+	Polygon = loadImage("POLYGON.png");
+}
 
 function setup() {
 	createCanvas(1300, 600);
@@ -13,7 +19,10 @@ function setup() {
 	ground1 = new Ground(width/2,590,width,20);
 	ground2 = new Ground(800,450,400,10);
 	ground3 = new Ground(1100,250,150,10);
+	groundV = new Ground(width,height/2,10,height);
+
 	box = new Box(200,200);
+	// b1ox = new Boxes(0,0,20,20);
 
 	//row1
 	box1 = new Box(700,400);
@@ -46,6 +55,8 @@ function setup() {
 	//row3
 	boxT6 = new Box(1100,90);
 
+	slingShot = new Slingshot(box.body,{x:200,y:200});
+
 
 	Engine.run(engine);
   
@@ -54,12 +65,14 @@ function setup() {
 
 function draw() {
   rectMode(CENTER);
-  background(255);
+  background(2);
   ground1.display();
   ground2.display();
   ground3.display();
+  groundV.display();
   //the striker
   box.display();
+//   b1ox.display();
   //pyramid
   box1.display();
   box2.display();
@@ -83,6 +96,7 @@ function draw() {
   boxT4.display();
   boxT5.display();
   boxT6.display();
+  slingShot.display();
 
   
   drawSprites();
@@ -94,7 +108,7 @@ function mouseDragged(){
 }
 
 
-// function mouseReleased(){
-//     slingshot.fly();
-// }
+function mouseReleased(){
+    slingShot.fly();
+}
 
