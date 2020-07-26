@@ -22,7 +22,7 @@ function setup() {
 	groundV = new Ground(width,height/2,10,height);
 
 	box = new Box(200,200);
-	// b1ox = new Boxes(0,0,20,20);
+	b1ox = new Boxes(0,0,20,20);
 
 	//row1
 	box1 = new Box(700,400);
@@ -72,7 +72,7 @@ function draw() {
   groundV.display();
   //the striker
   box.display();
-//   b1ox.display();
+  b1ox.display();
   //pyramid
   box1.display();
   box2.display();
