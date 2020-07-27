@@ -6,9 +6,9 @@ const Body = Matter.Body;
 const Constraint = Matter.Constraint;
 var box,b1ox;
 
-function preload(){
-	Polygon = loadImage("POLYGON.png");
-}
+// function preload(){
+// 	Polygon = loadImage("POLYGON.png");
+// }
 
 function setup() {
 	createCanvas(1300, 600);
@@ -21,8 +21,8 @@ function setup() {
 	ground3 = new Ground(1100,250,150,10);
 	groundV = new Ground(width,height/2,10,height);
 
-	box = new Box(200,200);
-	b1ox = new Boxes(0,0,20,20);
+	// box = new Box(200,200);
+	box = new Boxes(200,200,40,40);
 
 	//row1
 	box1 = new Box(700,400);
@@ -72,7 +72,7 @@ function draw() {
   groundV.display();
   //the striker
   box.display();
-  b1ox.display();
+//   b1ox.display();
   //pyramid
   box1.display();
   box2.display();
